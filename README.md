@@ -11,3 +11,9 @@ npm install
 ```
 npm run build
 ```
+
+## Deploy
+
+```
+npm run deploy
+```

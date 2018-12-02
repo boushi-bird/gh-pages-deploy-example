@@ -7,12 +7,15 @@
   "scripts": {
     "serve": "webpack-dev-server --mode production --plugin html-webpack-plugin",
     "build": "rimraf dist && webpack --mode production --plugin html-webpack-plugin",
+    "deploy": "npm run build && npm run deploy-only",
+    "deploy-only": "gh-pages -d dist -m \"Build from commit $(git log -n 1 --format=%h) [ci skip]\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
+    "gh-pages": "^2.0.1",
     "html-webpack-plugin": "^3.2.0",
     "rimraf": "^2.6.2",
     "webpack": "^4.26.1",
